@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+<p style="font-size:14pt;">This is WebView</p>
+<input id="inputField"
+       style="height:40px;width: calc(100% - 10px); font-size:14pt; margin-right: 10px;" type="text"
+       value="">
+<br><br>
+<input onClick="sendMessageToNative()"
+       style="height:40px;width:100%; font-size:14pt;background-color: black; color: white;"
+       type="button" value="SEN TO NATIVE"/>
+
+<script type="text/javascript">
+    function sendMessageToNative() {
+		var valueReceived =  document.getElementById("inputField").value;
+        JSInterface.showMessage(valueReceived);
+    }
+    function showMessageFromNative(message){
+		document.getElementById("inputField").value = message;
+    }
+
+</script>
+<style>
+	body {
+	background-color: #93B874
+	}
+
+</style>
+</body>
+</html>
